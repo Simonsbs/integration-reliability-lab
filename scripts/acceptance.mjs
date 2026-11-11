@@ -106,8 +106,9 @@ export async function runAcceptance(baseUrl, output, label = "API") {
       const s = await state(token); assert.equal(s.orders[latest.orderId].version, 2); assert.equal(s.orders[latest.orderId].status, "shipped"); assert.equal(s.orders[latest.orderId].effects, 1);
     });
     await test("429 Retry-After is honoured when longer than policy backoff", async () => {
-      const token = await session(); const id = await enqueue(token); await mode(token, "throttled"); const before = await state(token); const result = await send(token, id);
+      const token = await session(); const id = await enqueue(token); await mode(token, "throttled"); const before = await state(token); const envelope = await claim(token, id); const result = await sendEnvelope(token, envelope);
       assert.equal(result.status, 429); assert.equal(result.headers.get("retry-after"), "8"); assert.equal((await job(token, id)).nextAt, before.clock + 8);
+      const repeated = await sendEnvelope(token, envelope); assert.equal(repeated.status, 429); assert.equal(repeated.raw, result.raw); assert.equal(repeated.headers.get("retry-after"), "8");
     });
     await test("concurrent duplicate deliveries commit exactly one order effect", async () => {
       const token = await session(); const p = fixture(); const ids = [await enqueue(token, p), await enqueue(token, p)]; const envelopes = [await claim(token, ids[0]), await claim(token, ids[1])];

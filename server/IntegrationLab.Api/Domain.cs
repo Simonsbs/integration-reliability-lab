@@ -112,7 +112,11 @@ public static class Domain {
     public static Reply Receive(LabState state, IHeaderDictionary headers, string raw) {
         var job = Find(state, headers["X-Lab-Delivery"].ToString()); var attemptId = headers["X-Lab-Attempt"].ToString();
         var prior = job.Attempts.Find(attempt => attempt.Id == attemptId);
-        if (prior is not null) return new(prior.HttpStatus, prior.ResponseBody, new() { ["X-Lab-Outcome"] = prior.Outcome, ["X-Correlation-Id"] = job.CorrelationId });
+        if (prior is not null) {
+            Dictionary<string, string> cachedHeaders = new() { ["X-Lab-Outcome"] = prior.Outcome, ["X-Correlation-Id"] = job.CorrelationId };
+            if (prior.Outcome == "receiver-throttled") cachedHeaders["Retry-After"] = "8";
+            return new(prior.HttpStatus, prior.ResponseBody, cachedHeaders);
+        }
         if (job.Lease is null || job.Lease.Id != attemptId) throw new LabException(409, "invalid-lease", "Reserve this delivery before sending it.");
         Reply Fail(int status, string code, string message, int retryAfter = 0) => Record(state, job, attemptId, status, code, Error(code, message), retryAfter: retryAfter);
         if (job.Lease.ExpiresAt <= state.Clock) return Fail(408, "sender-timeout", "The virtual attempt lease expired.");

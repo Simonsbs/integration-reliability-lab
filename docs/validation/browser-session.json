@@ -1,0 +1,423 @@
+{
+  "exportedAt": "2026-11-11T13:21:50.816Z",
+  "scope": "Synthetic sandbox evidence. Virtual retry clock. No capabilities or signing secrets.",
+  "lab": {
+    "clock": 1794403042,
+    "startedAt": 1794402977,
+    "receiver": "healthy",
+    "jobs": [
+      {
+        "id": "32c5d910328c4b0e884807271720b644",
+        "correlationId": "28ebe3f67ad94d96877f0e7a4d1872ea",
+        "payload": {
+          "eventId": "evt-48029cd2",
+          "orderId": "ORD-PUBLIC-LOSS",
+          "version": 1,
+          "status": "packed",
+          "note": "Synthetic order. No customer data."
+        },
+        "fault": "lost-response",
+        "status": "delivered",
+        "createdAt": 1794402977,
+        "nextAt": null,
+        "cycle": 0,
+        "lease": null,
+        "attempts": [
+          {
+            "id": "6147d7cf84f94e07aecd471564a8688b",
+            "number": 1,
+            "cycle": 0,
+            "at": 1794402977,
+            "httpStatus": 503,
+            "outcome": "response-lost-after-commit",
+            "effectApplied": true,
+            "duplicate": false,
+            "nextAt": 1794402982,
+            "responseBody": "{\"error\":{\"code\":\"simulated-response-loss\",\"message\":\"The effect was committed but the sender did not receive success. This response loss is intentionally simulated.\"}}"
+          },
+          {
+            "id": "2653159cca7440e092a1ed89e58e220a",
+            "number": 2,
+            "cycle": 0,
+            "at": 1794403042,
+            "httpStatus": 200,
+            "outcome": "duplicate-suppressed",
+            "effectApplied": false,
+            "duplicate": true,
+            "nextAt": null,
+            "responseBody": "{\"accepted\":true,\"eventId\":\"evt-48029cd2\",\"orderId\":\"ORD-PUBLIC-LOSS\",\"version\":1,\"outcome\":\"applied\"}"
+          }
+        ]
+      },
+      {
+        "id": "0601151bf80149d6970b225b29722446",
+        "correlationId": "b6ef57612e274c18bd609f8a1407acea",
+        "payload": {
+          "eventId": "evt-26a3eeb0",
+          "orderId": "ORD-OUTAGE-493bfb",
+          "version": 1,
+          "status": "packed",
+          "note": "Synthetic order. No customer data."
+        },
+        "fault": "none",
+        "status": "delivered",
+        "createdAt": 1794402977,
+        "nextAt": null,
+        "cycle": 1,
+        "lease": null,
+        "attempts": [
+          {
+            "id": "b09fe6f8e3844770944e441ffc9ae9cb",
+            "number": 1,
+            "cycle": 0,
+            "at": 1794402977,
+            "httpStatus": 503,
+            "outcome": "receiver-unavailable",
+            "effectApplied": false,
+            "duplicate": false,
+            "nextAt": 1794402982,
+            "responseBody": "{\"error\":{\"code\":\"receiver-unavailable\",\"message\":\"Synthetic receiver outage.\"}}"
+          },
+          {
+            "id": "0a8c6cb2cedb4fae9e7debd4fd3b409d",
+            "number": 2,
+            "cycle": 0,
+            "at": 1794402982,
+            "httpStatus": 503,
+            "outcome": "receiver-unavailable",
+            "effectApplied": false,
+            "duplicate": false,
+            "nextAt": 1794402997,
+            "responseBody": "{\"error\":{\"code\":\"receiver-unavailable\",\"message\":\"Synthetic receiver outage.\"}}"
+          },
+          {
+            "id": "8b83166e972342b185937dafce50bb8c",
+            "number": 3,
+            "cycle": 0,
+            "at": 1794402997,
+            "httpStatus": 503,
+            "outcome": "receiver-unavailable",
+            "effectApplied": false,
+            "duplicate": false,
+            "nextAt": 1794403042,
+            "responseBody": "{\"error\":{\"code\":\"receiver-unavailable\",\"message\":\"Synthetic receiver outage.\"}}"
+          },
+          {
+            "id": "c4c4d591256c4fbc87254f847e51bbfa",
+            "number": 4,
+            "cycle": 0,
+            "at": 1794403042,
+            "httpStatus": 503,
+            "outcome": "receiver-unavailable",
+            "effectApplied": false,
+            "duplicate": false,
+            "nextAt": null,
+            "responseBody": "{\"error\":{\"code\":\"receiver-unavailable\",\"message\":\"Synthetic receiver outage.\"}}"
+          },
+          {
+            "id": "954222740e3049579c776bccaf3b9f31",
+            "number": 5,
+            "cycle": 1,
+            "at": 1794403042,
+            "httpStatus": 200,
+            "outcome": "applied",
+            "effectApplied": true,
+            "duplicate": false,
+            "nextAt": null,
+            "responseBody": "{\"accepted\":true,\"eventId\":\"evt-26a3eeb0\",\"orderId\":\"ORD-OUTAGE-493bfb\",\"version\":1,\"outcome\":\"applied\"}"
+          }
+        ]
+      },
+      {
+        "id": "11da5c41a7b742098d97d71149530748",
+        "correlationId": "7397ed89f1d64d0aa0eeaca223d79029",
+        "payload": {
+          "eventId": "evt-26a3eeb0",
+          "orderId": "ORD-OUTAGE-493bfb",
+          "version": 1,
+          "status": "packed",
+          "note": "Synthetic order. No customer data."
+        },
+        "fault": "none",
+        "status": "delivered",
+        "createdAt": 1794403042,
+        "nextAt": null,
+        "cycle": 0,
+        "lease": null,
+        "attempts": [
+          {
+            "id": "c8662e2571cf4621b32f8446fede3b80",
+            "number": 1,
+            "cycle": 0,
+            "at": 1794403042,
+            "httpStatus": 200,
+            "outcome": "duplicate-suppressed",
+            "effectApplied": false,
+            "duplicate": true,
+            "nextAt": null,
+            "responseBody": "{\"accepted\":true,\"eventId\":\"evt-26a3eeb0\",\"orderId\":\"ORD-OUTAGE-493bfb\",\"version\":1,\"outcome\":\"applied\"}"
+          }
+        ]
+      }
+    ],
+    "receipts": {
+      "evt-48029cd2": {
+        "eventId": "evt-48029cd2",
+        "bodyHash": "cd47785051f673abff0b1abaebd4eada94be51565b75fd19fecc0a7ee8854039",
+        "responseBody": "{\"accepted\":true,\"eventId\":\"evt-48029cd2\",\"orderId\":\"ORD-PUBLIC-LOSS\",\"version\":1,\"outcome\":\"applied\"}",
+        "at": 1794402977
+      },
+      "evt-26a3eeb0": {
+        "eventId": "evt-26a3eeb0",
+        "bodyHash": "40c0ab112630e2373955b7242d0b99e0e97e8bb13f3826b42b19653dbdaf03de",
+        "responseBody": "{\"accepted\":true,\"eventId\":\"evt-26a3eeb0\",\"orderId\":\"ORD-OUTAGE-493bfb\",\"version\":1,\"outcome\":\"applied\"}",
+        "at": 1794403042
+      }
+    },
+    "orders": {
+      "ORD-PUBLIC-LOSS": {
+        "orderId": "ORD-PUBLIC-LOSS",
+        "version": 1,
+        "status": "packed",
+        "effects": 1
+      },
+      "ORD-OUTAGE-493bfb": {
+        "orderId": "ORD-OUTAGE-493bfb",
+        "version": 1,
+        "status": "packed",
+        "effects": 1
+      }
+    },
+    "audit": [
+      {
+        "id": "7c592ca0e23244dc8eb8154531f00251",
+        "at": 1794402977,
+        "action": "sandbox-created",
+        "deliveryId": null,
+        "correlationId": null,
+        "detail": "Synthetic orders only. Retry time advances only through explicit lab actions."
+      },
+      {
+        "id": "7ba9f04ef21f4a7b9fd3d59c371acd33",
+        "at": 1794402977,
+        "action": "enqueued",
+        "deliveryId": "32c5d910328c4b0e884807271720b644",
+        "correlationId": "28ebe3f67ad94d96877f0e7a4d1872ea",
+        "detail": "Event evt-48029cd2 for ORD-PUBLIC-LOSS, version 1."
+      },
+      {
+        "id": "ab862a46e7d54e229ca7a69509f89238",
+        "at": 1794402977,
+        "action": "attempt-reserved",
+        "deliveryId": "32c5d910328c4b0e884807271720b644",
+        "correlationId": "28ebe3f67ad94d96877f0e7a4d1872ea",
+        "detail": "A signed delivery envelope was issued to the browser sender for a real HTTP request."
+      },
+      {
+        "id": "a3698658dcee45218661ae3b70e671d8",
+        "at": 1794402977,
+        "action": "effect-applied",
+        "deliveryId": "32c5d910328c4b0e884807271720b644",
+        "correlationId": "28ebe3f67ad94d96877f0e7a4d1872ea",
+        "detail": "The receiver committed the effect and idempotency receipt before simulating a lost success response."
+      },
+      {
+        "id": "b14bf421d039475fb4d697f79f05be27",
+        "at": 1794402977,
+        "action": "retry-scheduled",
+        "deliveryId": "32c5d910328c4b0e884807271720b644",
+        "correlationId": "28ebe3f67ad94d96877f0e7a4d1872ea",
+        "detail": "HTTP 503; response-lost-after-commit; retry in 5s."
+      },
+      {
+        "id": "086dd54970724bf5aaf13fb7a1fd06ec",
+        "at": 1794402977,
+        "action": "receiver-mode",
+        "deliveryId": null,
+        "correlationId": null,
+        "detail": "Receiver is now outage."
+      },
+      {
+        "id": "b8a5ca2867e04402a2556e9afeb21990",
+        "at": 1794402977,
+        "action": "enqueued",
+        "deliveryId": "0601151bf80149d6970b225b29722446",
+        "correlationId": "b6ef57612e274c18bd609f8a1407acea",
+        "detail": "Event evt-26a3eeb0 for ORD-OUTAGE-493bfb, version 1."
+      },
+      {
+        "id": "8e493729f23247bf94503381db81ebc8",
+        "at": 1794402977,
+        "action": "attempt-reserved",
+        "deliveryId": "0601151bf80149d6970b225b29722446",
+        "correlationId": "b6ef57612e274c18bd609f8a1407acea",
+        "detail": "A signed delivery envelope was issued to the browser sender for a real HTTP request."
+      },
+      {
+        "id": "3bec736b42ed4746aeb9308cf5481f24",
+        "at": 1794402977,
+        "action": "retry-scheduled",
+        "deliveryId": "0601151bf80149d6970b225b29722446",
+        "correlationId": "b6ef57612e274c18bd609f8a1407acea",
+        "detail": "HTTP 503; receiver-unavailable; retry in 5s."
+      },
+      {
+        "id": "6378351fed5b4638b5a2248a314e5146",
+        "at": 1794402982,
+        "action": "clock-advanced",
+        "deliveryId": null,
+        "correlationId": null,
+        "detail": "Advanced 5 virtual seconds. Real wall-clock time is unchanged."
+      },
+      {
+        "id": "4a1911eb26f04e479e26456ed65abe0e",
+        "at": 1794402982,
+        "action": "attempt-reserved",
+        "deliveryId": "0601151bf80149d6970b225b29722446",
+        "correlationId": "b6ef57612e274c18bd609f8a1407acea",
+        "detail": "A signed delivery envelope was issued to the browser sender for a real HTTP request."
+      },
+      {
+        "id": "a1bdd744b5084362b4bea8cd2bdcbb62",
+        "at": 1794402982,
+        "action": "retry-scheduled",
+        "deliveryId": "0601151bf80149d6970b225b29722446",
+        "correlationId": "b6ef57612e274c18bd609f8a1407acea",
+        "detail": "HTTP 503; receiver-unavailable; retry in 15s."
+      },
+      {
+        "id": "bf12c482d1114338a6e3d77bd68a920c",
+        "at": 1794402997,
+        "action": "clock-advanced",
+        "deliveryId": null,
+        "correlationId": null,
+        "detail": "Advanced 15 virtual seconds. Real wall-clock time is unchanged."
+      },
+      {
+        "id": "891f3e2ebf4e44bf8633d72412aec502",
+        "at": 1794402997,
+        "action": "attempt-reserved",
+        "deliveryId": "0601151bf80149d6970b225b29722446",
+        "correlationId": "b6ef57612e274c18bd609f8a1407acea",
+        "detail": "A signed delivery envelope was issued to the browser sender for a real HTTP request."
+      },
+      {
+        "id": "2465fc269df5460dbb92b7d6d12f73a7",
+        "at": 1794402997,
+        "action": "retry-scheduled",
+        "deliveryId": "0601151bf80149d6970b225b29722446",
+        "correlationId": "b6ef57612e274c18bd609f8a1407acea",
+        "detail": "HTTP 503; receiver-unavailable; retry in 45s."
+      },
+      {
+        "id": "f108c2fb682c424aa03055bfd28f66a9",
+        "at": 1794403042,
+        "action": "clock-advanced",
+        "deliveryId": null,
+        "correlationId": null,
+        "detail": "Advanced 45 virtual seconds. Real wall-clock time is unchanged."
+      },
+      {
+        "id": "6764942c49c04dbdb20f0f4cfe2b7896",
+        "at": 1794403042,
+        "action": "attempt-reserved",
+        "deliveryId": "0601151bf80149d6970b225b29722446",
+        "correlationId": "b6ef57612e274c18bd609f8a1407acea",
+        "detail": "A signed delivery envelope was issued to the browser sender for a real HTTP request."
+      },
+      {
+        "id": "7311e8ef65254adaaf8a9771a66573ff",
+        "at": 1794403042,
+        "action": "dead-lettered",
+        "deliveryId": "0601151bf80149d6970b225b29722446",
+        "correlationId": "b6ef57612e274c18bd609f8a1407acea",
+        "detail": "HTTP 503; receiver-unavailable."
+      },
+      {
+        "id": "e85e5c1de608401dae40a604eeef3b5d",
+        "at": 1794403042,
+        "action": "receiver-mode",
+        "deliveryId": null,
+        "correlationId": null,
+        "detail": "Receiver is now healthy."
+      },
+      {
+        "id": "a9dce5956c9d4084b4799c048317569b",
+        "at": 1794403042,
+        "action": "replayed",
+        "deliveryId": "0601151bf80149d6970b225b29722446",
+        "correlationId": "b6ef57612e274c18bd609f8a1407acea",
+        "detail": "Replay cycle 1; prior attempts retained; sender fault repaired."
+      },
+      {
+        "id": "f10809928a604e03aee813bf38954154",
+        "at": 1794403042,
+        "action": "attempt-reserved",
+        "deliveryId": "0601151bf80149d6970b225b29722446",
+        "correlationId": "b6ef57612e274c18bd609f8a1407acea",
+        "detail": "A signed delivery envelope was issued to the browser sender for a real HTTP request."
+      },
+      {
+        "id": "da163b0d8b9d4ac6a5bad94133f4d43f",
+        "at": 1794403042,
+        "action": "applied",
+        "deliveryId": "0601151bf80149d6970b225b29722446",
+        "correlationId": "b6ef57612e274c18bd609f8a1407acea",
+        "detail": "HTTP 200; applied."
+      },
+      {
+        "id": "fbc2f39dba1146a49cf8a973a1a80059",
+        "at": 1794403042,
+        "action": "enqueued",
+        "deliveryId": "11da5c41a7b742098d97d71149530748",
+        "correlationId": "7397ed89f1d64d0aa0eeaca223d79029",
+        "detail": "Event evt-26a3eeb0 for ORD-OUTAGE-493bfb, version 1."
+      },
+      {
+        "id": "d7e3e5e78b4f47e0b641e7341649a9c0",
+        "at": 1794403042,
+        "action": "attempt-reserved",
+        "deliveryId": "11da5c41a7b742098d97d71149530748",
+        "correlationId": "7397ed89f1d64d0aa0eeaca223d79029",
+        "detail": "A signed delivery envelope was issued to the browser sender for a real HTTP request."
+      },
+      {
+        "id": "4e40b91dff8e4241b5279a0790e85b7e",
+        "at": 1794403042,
+        "action": "duplicate-suppressed",
+        "deliveryId": "11da5c41a7b742098d97d71149530748",
+        "correlationId": "7397ed89f1d64d0aa0eeaca223d79029",
+        "detail": "HTTP 200; duplicate-suppressed."
+      },
+      {
+        "id": "9b5434ee2b734236a20395576427b895",
+        "at": 1794403042,
+        "action": "attempt-reserved",
+        "deliveryId": "32c5d910328c4b0e884807271720b644",
+        "correlationId": "28ebe3f67ad94d96877f0e7a4d1872ea",
+        "detail": "A signed delivery envelope was issued to the browser sender for a real HTTP request."
+      },
+      {
+        "id": "8dc8ccda43d94bab8fb81a25e23ecc02",
+        "at": 1794403042,
+        "action": "duplicate-suppressed",
+        "deliveryId": "32c5d910328c4b0e884807271720b644",
+        "correlationId": "28ebe3f67ad94d96877f0e7a4d1872ea",
+        "detail": "HTTP 200; duplicate-suppressed."
+      }
+    ],
+    "backend": "Cloudflare Worker + D1",
+    "contractVersion": 1,
+    "limits": {
+      "maxJobs": 24,
+      "maxReplays": 3,
+      "maxAttemptsPerCycle": 4,
+      "retryDelays": [
+        5,
+        15,
+        45
+      ],
+      "signatureWindowSeconds": 300
+    }
+  }
+}

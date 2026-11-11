@@ -1,0 +1,13 @@
+{
+  "passed": true,
+  "url": "https://simonsbs-integration-lab.thefrik.chatgpt.site",
+  "checkedAt": "2026-11-11T13:17:28.663Z",
+  "beforeSource": "0c1b311d6c88ec35302796d6529899e8389e143c",
+  "afterSource": "1c03b696ab3ad5acdf40f3b4a59ce6ce06e0b077",
+  "checks": [
+    "public D1 order and delivery survive deployment",
+    "cached receipt returns identical response after deployment",
+    "duplicate after deployment leaves one effect"
+  ],
+  "scope": "Actual public API before and after a Site version change. Capability retained in process memory only."
+}

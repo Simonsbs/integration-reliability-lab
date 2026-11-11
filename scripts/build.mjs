@@ -33,3 +33,4 @@ await bundle({ entryPoints: ["worker/index.ts"], outfile: "dist/server/index.js"
 await mkdir("dist/.openai", { recursive: true });
 await copyFile(".openai/hosting.json", "dist/.openai/hosting.json");
 console.log(`Built ${Object.keys(assets).length} embedded assets and the D1-backed Worker in ${relative(root, resolve("dist"))}.`);
+await import("./validate-artifact.mjs");

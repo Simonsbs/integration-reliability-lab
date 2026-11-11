@@ -1,7 +1,7 @@
 {
   "runtime": "worker",
   "passed": true,
-  "checkedAt": "2026-11-11T13:05:12.461Z",
+  "checkedAt": "2026-11-11T13:26:57.163Z",
   "checks": [
     "real persisted capability with expired wall-clock deadline returns HTTP 410"
   ],

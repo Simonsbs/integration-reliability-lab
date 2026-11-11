@@ -1,7 +1,7 @@
 {
   "runtime": "aspnet",
   "passed": true,
-  "checkedAt": "2026-11-11T13:05:00.591Z",
+  "checkedAt": "2026-11-11T13:26:45.025Z",
   "checks": [
     "real persisted capability with expired wall-clock deadline returns HTTP 410"
   ],

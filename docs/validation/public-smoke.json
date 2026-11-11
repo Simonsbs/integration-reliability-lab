@@ -1,0 +1,31 @@
+{
+  "url": "https://integration.bestdev.co.il",
+  "checkedAt": "2026-11-11T13:19:09.251Z",
+  "checks": [
+    {
+      "name": "HTTPS opens the standalone application without sign-in",
+      "passed": true
+    },
+    {
+      "name": "security headers constrain scripts, connections and framing",
+      "passed": true
+    },
+    {
+      "name": "hashed application assets load with immutable caching",
+      "passed": true
+    },
+    {
+      "name": "build notes, API contract and validation are available",
+      "passed": true
+    },
+    {
+      "name": "unknown assets are 404 and static POST is 405",
+      "passed": true
+    },
+    {
+      "name": "API reports Worker with no-store and rejects a foreign origin",
+      "passed": true
+    }
+  ],
+  "passed": true
+}

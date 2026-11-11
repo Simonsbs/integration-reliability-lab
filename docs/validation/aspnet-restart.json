@@ -1,7 +1,7 @@
 {
   "runtime": "aspnet",
   "passed": true,
-  "checkedAt": "2026-11-11T13:05:01.524Z",
+  "checkedAt": "2026-11-11T13:26:46.001Z",
   "checks": [
     "order and completed delivery survive process restart",
     "idempotency receipt returns identical response after restart",

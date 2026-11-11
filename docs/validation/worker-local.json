@@ -1,15 +1,15 @@
 {
   "schemaVersion": 1,
   "label": "worker contract acceptance",
-  "baseUrl": "http://127.0.0.1:62638",
-  "startedAt": "2026-11-11T13:05:05.754Z",
-  "finishedAt": "2026-11-11T13:05:12.400Z",
+  "baseUrl": "http://127.0.0.1:63618",
+  "startedAt": "2026-11-11T13:26:50.131Z",
+  "finishedAt": "2026-11-11T13:26:57.080Z",
   "scope": "Real HTTP and SQLite-backed API checks on synthetic data. Retry time is advanced explicitly, not measured as wall-clock delay. Session capabilities and signing secrets are excluded.",
   "sourceHashes": {
-    "src/domain.ts": "d7f167fb4661774e5356a221e3ce808123bec6f5eb81bc17ab3be73658f81ba6",
+    "src/domain.ts": "3411b23203d6b3e5a75229a78caaa3c003505e744db30d43adcefb08d77c9639",
     "worker/api.ts": "b773007e509fabc388f0a611be862b4569044c6cd7c5584eb9f39360527141f0",
     "worker/repository.ts": "f7eed766960d7f26acbda171bfae7e3760069927bf0eaa83db5bec847330a3a7",
-    "server/IntegrationLab.Api/Domain.cs": "d123e35bc786a0f959284f98fe643b3c5d65cdaf81ebc8ab21e2fe032ce4180a",
+    "server/IntegrationLab.Api/Domain.cs": "6cb9fac8776a1274b78a40db9a01464cc434bd158c1ca80a650078f829a4f87b",
     "server/IntegrationLab.Api/Program.cs": "fc2a7e19f8b416014e84d3948796c5c8e3d0e486d0df02006a5adf994caf2c9f",
     "server/IntegrationLab.Api/Repository.cs": "d253d7b23e084cbcaa29b0a0cb1f583ee5b170004f54c4ded1d9e7dc0a96ac63"
   },
@@ -17,127 +17,127 @@
     {
       "name": "health declares the real backend, persistence and virtual clock",
       "passed": true,
-      "elapsedMs": 53.201
+      "elapsedMs": 52.845
     },
     {
       "name": "sandbox state has no signing secret or capability and starts empty",
       "passed": true,
-      "elapsedMs": 70.389
+      "elapsedMs": 174.517
     },
     {
       "name": "valid HMAC over raw UTF-8 bytes applies a synthetic order once",
       "passed": true,
-      "elapsedMs": 115.643
+      "elapsedMs": 104.541
     },
     {
       "name": "repeated HTTP envelope returns its original result without another attempt",
       "passed": true,
-      "elapsedMs": 388.457
+      "elapsedMs": 126.73
     },
     {
       "name": "duplicate event in a new delivery returns the exact cached response",
       "passed": true,
-      "elapsedMs": 193.145
+      "elapsedMs": 213.503
     },
     {
       "name": "reusing an event ID with different bytes is a permanent conflict",
       "passed": true,
-      "elapsedMs": 191.896
+      "elapsedMs": 372.335
     },
     {
       "name": "invalid-signature is rejected without applying an effect",
       "passed": true,
-      "elapsedMs": 102.582
+      "elapsedMs": 111.724
     },
     {
       "name": "tampered-body is rejected without applying an effect",
       "passed": true,
-      "elapsedMs": 259.813
+      "elapsedMs": 107.333
     },
     {
       "name": "expired-timestamp is rejected without applying an effect",
       "passed": true,
-      "elapsedMs": 163.509
+      "elapsedMs": 190.658
     },
     {
       "name": "future-timestamp is rejected without applying an effect",
       "passed": true,
-      "elapsedMs": 163.319
+      "elapsedMs": 358.945
     },
     {
       "name": "malformed-json is rejected without applying an effect",
       "passed": true,
-      "elapsedMs": 98.505
+      "elapsedMs": 125.7
     },
     {
       "name": "outage schedules exactly 5, 15 and 45 seconds, then dead-letters",
       "passed": true,
-      "elapsedMs": 661.096
+      "elapsedMs": 649.328
     },
     {
       "name": "recovery and replay preserve failed evidence and deliver successfully",
       "passed": true,
-      "elapsedMs": 188.831
+      "elapsedMs": 272.869
     },
     {
       "name": "lost success after commit retries without repeating the effect",
       "passed": true,
-      "elapsedMs": 405.98
+      "elapsedMs": 217.148
     },
     {
       "name": "out-of-order versions are acknowledged without rolling back the order",
       "passed": true,
-      "elapsedMs": 389.534
+      "elapsedMs": 345.497
     },
     {
       "name": "429 Retry-After is honoured when longer than policy backoff",
       "passed": true,
-      "elapsedMs": 280.661
+      "elapsedMs": 205.636
     },
     {
       "name": "concurrent duplicate deliveries commit exactly one order effect",
       "passed": true,
-      "elapsedMs": 286.337
+      "elapsedMs": 185.229
     },
     {
       "name": "reservation prevents concurrent claims and expired lease recovers",
       "passed": true,
-      "elapsedMs": 200.2
+      "elapsedMs": 352.714
     },
     {
       "name": "another sandbox cannot read or claim this sandbox's deliveries",
       "passed": true,
-      "elapsedMs": 110.144
+      "elapsedMs": 118.022
     },
     {
       "name": "missing capability, cross-origin requests and forged fields are rejected",
       "passed": true,
-      "elapsedMs": 75.924
+      "elapsedMs": 75.215
     },
     {
       "name": "malformed JSON, content type, oversized body and invalid payload fail",
       "passed": true,
-      "elapsedMs": 112.934
+      "elapsedMs": 103.319
     },
     {
       "name": "replay is limited to dead letters and requires explicit repair choice",
       "passed": true,
-      "elapsedMs": 253.436
+      "elapsedMs": 304.826
     },
     {
       "name": "prototype-like valid identifiers remain ordinary idempotency and order keys",
       "passed": true,
-      "elapsedMs": 132.574
+      "elapsedMs": 284.415
     },
     {
       "name": "sandbox limit rejects more work without altering the saved queue",
       "passed": true,
-      "elapsedMs": 713.355
+      "elapsedMs": 853.551
     },
     {
       "name": "revoked capability cannot retrieve persisted sandbox state",
       "passed": true,
-      "elapsedMs": 281.699
+      "elapsedMs": 91.614
     }
   ],
   "requests": [
@@ -145,1327 +145,1334 @@
       "method": "GET",
       "path": "/api/health",
       "status": 200,
-      "elapsedMs": 53.178
+      "elapsedMs": 52.826
     },
     {
       "method": "POST",
       "path": "/api/labs",
       "status": 201,
-      "elapsedMs": 52.457
+      "elapsedMs": 158.56
     },
     {
       "method": "GET",
       "path": "/api/state",
       "status": 200,
-      "elapsedMs": 17.88
+      "elapsedMs": 15.912
     },
     {
       "method": "POST",
       "path": "/api/labs",
       "status": 201,
-      "elapsedMs": 23.074
+      "elapsedMs": 20.816
     },
     {
       "method": "POST",
       "path": "/api/deliveries",
       "status": 201,
-      "elapsedMs": 25.662
+      "elapsedMs": 20.568
     },
     {
       "method": "POST",
-      "path": "/api/deliveries/1fd4c59272e749f6bf0a3fb7bf8a1c40/claim",
+      "path": "/api/deliveries/d05c3406120b4e388d235a1070020aa6/claim",
       "status": 200,
-      "elapsedMs": 25.86
+      "elapsedMs": 23.913
     },
     {
       "method": "POST",
       "path": "/api/receiver",
       "status": 200,
-      "elapsedMs": 24.323,
-      "outcome": "applied"
-    },
-    {
-      "method": "GET",
-      "path": "/api/state",
-      "status": 200,
-      "elapsedMs": 16.632
-    },
-    {
-      "method": "POST",
-      "path": "/api/labs",
-      "status": 201,
-      "elapsedMs": 145.775
-    },
-    {
-      "method": "POST",
-      "path": "/api/deliveries",
-      "status": 201,
-      "elapsedMs": 24.727
-    },
-    {
-      "method": "POST",
-      "path": "/api/deliveries/061995ae0cc34ab0a5f3b27f8d6d1d0a/claim",
-      "status": 200,
-      "elapsedMs": 27.91
-    },
-    {
-      "method": "POST",
-      "path": "/api/receiver",
-      "status": 200,
-      "elapsedMs": 151.947,
-      "outcome": "applied"
-    },
-    {
-      "method": "POST",
-      "path": "/api/receiver",
-      "status": 200,
-      "elapsedMs": 21.162,
+      "elapsedMs": 23.587,
       "outcome": "applied"
     },
     {
       "method": "GET",
       "path": "/api/state",
       "status": 200,
-      "elapsedMs": 16.839
+      "elapsedMs": 15.577
     },
     {
       "method": "POST",
       "path": "/api/labs",
       "status": 201,
-      "elapsedMs": 25.234
+      "elapsedMs": 21.584
     },
     {
       "method": "POST",
       "path": "/api/deliveries",
       "status": 201,
-      "elapsedMs": 20.87
+      "elapsedMs": 21.215
     },
     {
       "method": "POST",
-      "path": "/api/deliveries/9ece29dada3d4f819065db5fc0cbf2f5/claim",
+      "path": "/api/deliveries/c78ab35f913d4ff9802e92b93d9b3313/claim",
       "status": 200,
-      "elapsedMs": 27.076
+      "elapsedMs": 21.043
     },
     {
       "method": "POST",
       "path": "/api/receiver",
       "status": 200,
-      "elapsedMs": 21.111,
+      "elapsedMs": 22.961,
+      "outcome": "applied"
+    },
+    {
+      "method": "POST",
+      "path": "/api/receiver",
+      "status": 200,
+      "elapsedMs": 22.471,
+      "outcome": "applied"
+    },
+    {
+      "method": "GET",
+      "path": "/api/state",
+      "status": 200,
+      "elapsedMs": 17.358
+    },
+    {
+      "method": "POST",
+      "path": "/api/labs",
+      "status": 201,
+      "elapsedMs": 22.643
+    },
+    {
+      "method": "POST",
+      "path": "/api/deliveries",
+      "status": 201,
+      "elapsedMs": 24.388
+    },
+    {
+      "method": "POST",
+      "path": "/api/deliveries/5cd3c3a8e0ac4d1284a0f65c37b50b84/claim",
+      "status": 200,
+      "elapsedMs": 26.106
+    },
+    {
+      "method": "POST",
+      "path": "/api/receiver",
+      "status": 200,
+      "elapsedMs": 24.666,
       "outcome": "applied"
     },
     {
       "method": "POST",
       "path": "/api/deliveries",
       "status": 201,
-      "elapsedMs": 20.954
+      "elapsedMs": 25.251
     },
     {
       "method": "POST",
-      "path": "/api/deliveries/21004f3538f44f8e94be70548b90ae11/claim",
+      "path": "/api/deliveries/e62553d7d52e4357bdbdb660520189d3/claim",
       "status": 200,
-      "elapsedMs": 23.435
+      "elapsedMs": 27.262
     },
     {
       "method": "POST",
       "path": "/api/receiver",
       "status": 200,
-      "elapsedMs": 22.574,
+      "elapsedMs": 26.258,
       "outcome": "duplicate-suppressed"
     },
     {
       "method": "GET",
       "path": "/api/state",
       "status": 200,
-      "elapsedMs": 14.714
+      "elapsedMs": 18.629
     },
     {
       "method": "GET",
       "path": "/api/state",
       "status": 200,
-      "elapsedMs": 17.041
+      "elapsedMs": 18.156
     },
     {
       "method": "POST",
       "path": "/api/labs",
       "status": 201,
-      "elapsedMs": 23.802
+      "elapsedMs": 26.01
     },
     {
       "method": "POST",
       "path": "/api/deliveries",
       "status": 201,
-      "elapsedMs": 22.361
+      "elapsedMs": 26.279
     },
     {
       "method": "POST",
-      "path": "/api/deliveries/95596f1dbd4d43e39cb8ef207e833049/claim",
+      "path": "/api/deliveries/301c382e013b4ed1a33f06ff98248151/claim",
       "status": 200,
-      "elapsedMs": 25.245
+      "elapsedMs": 25.595
     },
     {
       "method": "POST",
       "path": "/api/receiver",
       "status": 200,
-      "elapsedMs": 23.044,
+      "elapsedMs": 149.855,
       "outcome": "applied"
     },
     {
       "method": "POST",
       "path": "/api/deliveries",
       "status": 201,
-      "elapsedMs": 23.734
+      "elapsedMs": 25.506
     },
     {
       "method": "POST",
-      "path": "/api/deliveries/882d60c603de4f4f9eb076bc00cc5e93/claim",
+      "path": "/api/deliveries/621f13df02d843098f02a6ebc47267f9/claim",
       "status": 200,
-      "elapsedMs": 23.501
+      "elapsedMs": 57.74
     },
     {
       "method": "POST",
       "path": "/api/receiver",
       "status": 409,
-      "elapsedMs": 21.984,
+      "elapsedMs": 26.579,
       "outcome": "idempotency-conflict"
     },
     {
       "method": "GET",
       "path": "/api/state",
       "status": 200,
-      "elapsedMs": 13.93
+      "elapsedMs": 17.111
     },
     {
       "method": "GET",
       "path": "/api/state",
       "status": 200,
-      "elapsedMs": 14.14
+      "elapsedMs": 17.507
     },
     {
       "method": "POST",
       "path": "/api/labs",
       "status": 201,
-      "elapsedMs": 22.259
+      "elapsedMs": 24.292
     },
     {
       "method": "POST",
       "path": "/api/deliveries",
       "status": 201,
-      "elapsedMs": 22.707
+      "elapsedMs": 26.932
     },
     {
       "method": "POST",
-      "path": "/api/deliveries/23c625f6e49a4d72acc7dbf7eeec92a5/claim",
+      "path": "/api/deliveries/0339a1dbb2584ceb829f55b9b4e4eb22/claim",
       "status": 200,
-      "elapsedMs": 21.808
+      "elapsedMs": 23.459
     },
     {
       "method": "POST",
       "path": "/api/receiver",
       "status": 401,
-      "elapsedMs": 21.622,
+      "elapsedMs": 21.518,
       "outcome": "invalid-signature"
     },
     {
       "method": "GET",
       "path": "/api/state",
       "status": 200,
-      "elapsedMs": 14.101
+      "elapsedMs": 15.438
     },
     {
       "method": "POST",
       "path": "/api/labs",
       "status": 201,
-      "elapsedMs": 178.86
+      "elapsedMs": 25.117
     },
     {
       "method": "POST",
       "path": "/api/deliveries",
       "status": 201,
-      "elapsedMs": 21.937
+      "elapsedMs": 23.707
     },
     {
       "method": "POST",
-      "path": "/api/deliveries/74ca7dfe787f48a29e83efe24ac72816/claim",
+      "path": "/api/deliveries/1f1a3dc21e524535948361e2c9c12733/claim",
       "status": 200,
-      "elapsedMs": 22.57
+      "elapsedMs": 21.788
     },
     {
       "method": "POST",
       "path": "/api/receiver",
       "status": 401,
-      "elapsedMs": 20.912,
+      "elapsedMs": 21.386,
       "outcome": "invalid-signature"
     },
     {
       "method": "GET",
       "path": "/api/state",
       "status": 200,
-      "elapsedMs": 15.437
+      "elapsedMs": 15.247
     },
     {
       "method": "POST",
       "path": "/api/labs",
       "status": 201,
-      "elapsedMs": 85.35
+      "elapsedMs": 25.916
     },
     {
       "method": "POST",
       "path": "/api/deliveries",
       "status": 201,
-      "elapsedMs": 19.34
+      "elapsedMs": 22.135
     },
     {
       "method": "POST",
-      "path": "/api/deliveries/2b81b2c5f40c4524abb390e1075adf16/claim",
+      "path": "/api/deliveries/eec9d33ea72a49e29f73d74ac78f1a39/claim",
       "status": 200,
-      "elapsedMs": 22.546
+      "elapsedMs": 27.055
     },
     {
       "method": "POST",
       "path": "/api/receiver",
       "status": 401,
-      "elapsedMs": 20.875,
+      "elapsedMs": 25.674,
       "outcome": "expired-timestamp"
     },
     {
       "method": "GET",
       "path": "/api/state",
       "status": 200,
-      "elapsedMs": 15.315
+      "elapsedMs": 89.795
     },
     {
       "method": "POST",
       "path": "/api/labs",
       "status": 201,
-      "elapsedMs": 21.737
+      "elapsedMs": 144.785
     },
     {
       "method": "POST",
       "path": "/api/deliveries",
       "status": 201,
-      "elapsedMs": 86.448
+      "elapsedMs": 24.327
     },
     {
       "method": "POST",
-      "path": "/api/deliveries/13e496c7055c43dd86679fd36e728f6c/claim",
+      "path": "/api/deliveries/420a83fd2a5549cba93073bdbc0cf83b/claim",
       "status": 200,
-      "elapsedMs": 21.624
+      "elapsedMs": 21.729
     },
     {
       "method": "POST",
       "path": "/api/receiver",
       "status": 401,
-      "elapsedMs": 19.775,
+      "elapsedMs": 25.49,
       "outcome": "expired-timestamp"
     },
     {
       "method": "GET",
       "path": "/api/state",
       "status": 200,
-      "elapsedMs": 13.643
+      "elapsedMs": 142.487
     },
     {
       "method": "POST",
       "path": "/api/labs",
       "status": 201,
-      "elapsedMs": 19.914
+      "elapsedMs": 27.608
     },
     {
       "method": "POST",
       "path": "/api/deliveries",
       "status": 201,
-      "elapsedMs": 20.2
+      "elapsedMs": 26.922
     },
     {
       "method": "POST",
-      "path": "/api/deliveries/5e5295f738af43e4acc7f28d5ba81c99/claim",
+      "path": "/api/deliveries/1332d79e550146bd8ff7518a3fbd497e/claim",
       "status": 200,
-      "elapsedMs": 22.193
+      "elapsedMs": 24.145
     },
     {
       "method": "POST",
       "path": "/api/receiver",
       "status": 400,
-      "elapsedMs": 22.891,
+      "elapsedMs": 29.086,
       "outcome": "invalid-payload"
     },
     {
       "method": "GET",
       "path": "/api/state",
       "status": 200,
-      "elapsedMs": 13.218
+      "elapsedMs": 17.845
     },
     {
       "method": "POST",
       "path": "/api/labs",
       "status": 201,
-      "elapsedMs": 19.696
+      "elapsedMs": 26.05
     },
     {
       "method": "POST",
       "path": "/api/deliveries",
       "status": 201,
-      "elapsedMs": 24.346
+      "elapsedMs": 26.11
     },
     {
       "method": "POST",
       "path": "/api/receiver-mode",
       "status": 200,
-      "elapsedMs": 19.956
+      "elapsedMs": 28.218
     },
     {
       "method": "GET",
       "path": "/api/state",
       "status": 200,
-      "elapsedMs": 14.097
+      "elapsedMs": 17.976
     },
     {
       "method": "POST",
-      "path": "/api/deliveries/a76189355c4c40a68875e85488c9d2ca/claim",
+      "path": "/api/deliveries/21f46633e5c94cc29db2ecdfbfccf0ee/claim",
       "status": 200,
-      "elapsedMs": 21.429
+      "elapsedMs": 24.832
     },
     {
       "method": "POST",
       "path": "/api/receiver",
       "status": 503,
-      "elapsedMs": 22.014,
+      "elapsedMs": 27.313,
       "outcome": "receiver-unavailable"
     },
     {
       "method": "GET",
       "path": "/api/state",
       "status": 200,
-      "elapsedMs": 16.645
+      "elapsedMs": 17.785
     },
     {
       "method": "POST",
-      "path": "/api/deliveries/a76189355c4c40a68875e85488c9d2ca/claim",
+      "path": "/api/deliveries/21f46633e5c94cc29db2ecdfbfccf0ee/claim",
       "status": 409,
-      "elapsedMs": 16.972
+      "elapsedMs": 20.94
     },
     {
       "method": "POST",
       "path": "/api/clock",
       "status": 200,
-      "elapsedMs": 146.756
+      "elapsedMs": 98.974
     },
     {
       "method": "GET",
       "path": "/api/state",
       "status": 200,
-      "elapsedMs": 15.089
+      "elapsedMs": 16.337
     },
     {
       "method": "POST",
-      "path": "/api/deliveries/a76189355c4c40a68875e85488c9d2ca/claim",
+      "path": "/api/deliveries/21f46633e5c94cc29db2ecdfbfccf0ee/claim",
       "status": 200,
-      "elapsedMs": 21.231
+      "elapsedMs": 25.027
     },
     {
       "method": "POST",
       "path": "/api/receiver",
       "status": 503,
-      "elapsedMs": 23.716,
+      "elapsedMs": 31.743,
       "outcome": "receiver-unavailable"
     },
     {
       "method": "GET",
       "path": "/api/state",
       "status": 200,
-      "elapsedMs": 17.104
+      "elapsedMs": 20.8
     },
     {
       "method": "POST",
-      "path": "/api/deliveries/a76189355c4c40a68875e85488c9d2ca/claim",
+      "path": "/api/deliveries/21f46633e5c94cc29db2ecdfbfccf0ee/claim",
       "status": 409,
-      "elapsedMs": 17.188
+      "elapsedMs": 17.826
     },
     {
       "method": "POST",
       "path": "/api/clock",
       "status": 200,
-      "elapsedMs": 24.232
+      "elapsedMs": 22.376
     },
     {
       "method": "GET",
       "path": "/api/state",
       "status": 200,
-      "elapsedMs": 17.715
+      "elapsedMs": 17.053
     },
     {
       "method": "POST",
-      "path": "/api/deliveries/a76189355c4c40a68875e85488c9d2ca/claim",
+      "path": "/api/deliveries/21f46633e5c94cc29db2ecdfbfccf0ee/claim",
       "status": 200,
-      "elapsedMs": 28.088
+      "elapsedMs": 26.321
     },
     {
       "method": "POST",
       "path": "/api/receiver",
       "status": 503,
-      "elapsedMs": 25.054,
+      "elapsedMs": 23.848,
       "outcome": "receiver-unavailable"
     },
     {
       "method": "GET",
       "path": "/api/state",
       "status": 200,
-      "elapsedMs": 18.677
+      "elapsedMs": 17.548
     },
     {
       "method": "POST",
-      "path": "/api/deliveries/a76189355c4c40a68875e85488c9d2ca/claim",
+      "path": "/api/deliveries/21f46633e5c94cc29db2ecdfbfccf0ee/claim",
       "status": 409,
-      "elapsedMs": 17.398
+      "elapsedMs": 14.954
     },
     {
       "method": "POST",
       "path": "/api/clock",
       "status": 200,
-      "elapsedMs": 22.669
+      "elapsedMs": 24.248
     },
     {
       "method": "GET",
       "path": "/api/state",
       "status": 200,
-      "elapsedMs": 18.235
+      "elapsedMs": 15.12
     },
     {
       "method": "POST",
-      "path": "/api/deliveries/a76189355c4c40a68875e85488c9d2ca/claim",
+      "path": "/api/deliveries/21f46633e5c94cc29db2ecdfbfccf0ee/claim",
       "status": 200,
-      "elapsedMs": 23.392
+      "elapsedMs": 25.688
     },
     {
       "method": "POST",
       "path": "/api/receiver",
       "status": 503,
-      "elapsedMs": 32.293,
+      "elapsedMs": 26.322,
       "outcome": "receiver-unavailable"
     },
     {
       "method": "GET",
       "path": "/api/state",
       "status": 200,
-      "elapsedMs": 18.621
+      "elapsedMs": 16.563
     },
     {
       "method": "GET",
       "path": "/api/state",
       "status": 200,
-      "elapsedMs": 17.949
+      "elapsedMs": 18.821
     },
     {
       "method": "POST",
       "path": "/api/labs",
       "status": 201,
-      "elapsedMs": 24.995
+      "elapsedMs": 29.815
     },
     {
       "method": "POST",
       "path": "/api/deliveries",
       "status": 201,
-      "elapsedMs": 24.281
+      "elapsedMs": 27.263
     },
     {
       "method": "POST",
-      "path": "/api/deliveries/3feef39317104243941c7d1e9f575c23/claim",
+      "path": "/api/deliveries/3ef7e04fba8243e7bc055e6bbf9ac555/claim",
       "status": 200,
-      "elapsedMs": 24.591
+      "elapsedMs": 25.033
     },
     {
       "method": "POST",
       "path": "/api/receiver",
       "status": 401,
-      "elapsedMs": 23.957,
+      "elapsedMs": 26.718,
       "outcome": "invalid-signature"
     },
     {
       "method": "POST",
-      "path": "/api/deliveries/3feef39317104243941c7d1e9f575c23/replay",
+      "path": "/api/deliveries/3ef7e04fba8243e7bc055e6bbf9ac555/replay",
       "status": 200,
-      "elapsedMs": 27.014
+      "elapsedMs": 31.224
     },
     {
       "method": "POST",
-      "path": "/api/deliveries/3feef39317104243941c7d1e9f575c23/claim",
+      "path": "/api/deliveries/3ef7e04fba8243e7bc055e6bbf9ac555/claim",
       "status": 200,
-      "elapsedMs": 23.186
+      "elapsedMs": 25.589
     },
     {
       "method": "POST",
       "path": "/api/receiver",
       "status": 200,
-      "elapsedMs": 25.848,
+      "elapsedMs": 87.786,
       "outcome": "applied"
     },
     {
       "method": "GET",
       "path": "/api/state",
       "status": 200,
-      "elapsedMs": 14.817
+      "elapsedMs": 19.267
     },
     {
       "method": "POST",
       "path": "/api/labs",
       "status": 201,
-      "elapsedMs": 99.315
+      "elapsedMs": 26.974
     },
     {
       "method": "POST",
       "path": "/api/deliveries",
       "status": 201,
-      "elapsedMs": 153.534
+      "elapsedMs": 27.904
     },
     {
       "method": "POST",
-      "path": "/api/deliveries/0f8cec4a14984e4d8de2ef84f8fb2c08/claim",
+      "path": "/api/deliveries/035aaa847da644e691a4b2c44b7f458a/claim",
       "status": 200,
-      "elapsedMs": 23.572
+      "elapsedMs": 27.912
     },
     {
       "method": "POST",
       "path": "/api/receiver",
       "status": 503,
-      "elapsedMs": 23.476,
+      "elapsedMs": 23.18,
       "outcome": "response-lost-after-commit"
     },
     {
       "method": "GET",
       "path": "/api/state",
       "status": 200,
-      "elapsedMs": 16.793
+      "elapsedMs": 19.563
     },
     {
       "method": "POST",
       "path": "/api/clock",
       "status": 200,
-      "elapsedMs": 24.322
+      "elapsedMs": 24.996
     },
     {
       "method": "POST",
-      "path": "/api/deliveries/0f8cec4a14984e4d8de2ef84f8fb2c08/claim",
+      "path": "/api/deliveries/035aaa847da644e691a4b2c44b7f458a/claim",
       "status": 200,
-      "elapsedMs": 25.042
+      "elapsedMs": 24.55
     },
     {
       "method": "POST",
       "path": "/api/receiver",
       "status": 200,
-      "elapsedMs": 24.237,
+      "elapsedMs": 24.319,
       "outcome": "duplicate-suppressed"
     },
     {
       "method": "GET",
       "path": "/api/state",
       "status": 200,
-      "elapsedMs": 15.526
+      "elapsedMs": 17.553
     },
     {
       "method": "POST",
       "path": "/api/labs",
       "status": 201,
-      "elapsedMs": 136.596
+      "elapsedMs": 25.013
     },
     {
       "method": "POST",
       "path": "/api/deliveries",
       "status": 201,
-      "elapsedMs": 26.298
+      "elapsedMs": 95.382
     },
     {
       "method": "POST",
-      "path": "/api/deliveries/53bba9d28931466080d922b1084a484b/claim",
+      "path": "/api/deliveries/8afb7613d0bc4b189e8600278fdbc24c/claim",
       "status": 200,
-      "elapsedMs": 22.365
+      "elapsedMs": 28.966
     },
     {
       "method": "POST",
       "path": "/api/receiver",
       "status": 200,
-      "elapsedMs": 28.146,
+      "elapsedMs": 24.213,
       "outcome": "applied"
     },
     {
       "method": "POST",
       "path": "/api/deliveries",
       "status": 201,
-      "elapsedMs": 26.238
+      "elapsedMs": 24.986
     },
     {
       "method": "POST",
-      "path": "/api/deliveries/ce5d32dc0e8a4340982a02f9dbfa6ec6/claim",
+      "path": "/api/deliveries/f86b3a35daa34cedad9502fb1a05b0aa/claim",
       "status": 200,
-      "elapsedMs": 25.737
+      "elapsedMs": 23.844
     },
     {
       "method": "POST",
       "path": "/api/receiver",
       "status": 200,
-      "elapsedMs": 33.119,
+      "elapsedMs": 103.844,
       "outcome": "ignored-stale"
     },
     {
       "method": "GET",
       "path": "/api/state",
       "status": 200,
-      "elapsedMs": 90.864
+      "elapsedMs": 19.058
     },
     {
       "method": "POST",
       "path": "/api/labs",
       "status": 201,
-      "elapsedMs": 100.612
+      "elapsedMs": 26.222
     },
     {
       "method": "POST",
       "path": "/api/deliveries",
       "status": 201,
-      "elapsedMs": 26.185
+      "elapsedMs": 24.891
     },
     {
       "method": "POST",
       "path": "/api/receiver-mode",
       "status": 200,
-      "elapsedMs": 33.419
+      "elapsedMs": 25.478
     },
     {
       "method": "GET",
       "path": "/api/state",
       "status": 200,
-      "elapsedMs": 30.385
+      "elapsedMs": 31.837
     },
     {
       "method": "POST",
-      "path": "/api/deliveries/6004d9b8b5b84bd4864dada44c726172/claim",
+      "path": "/api/deliveries/2188c1b8e99e439c8b77f1cfda868c0e/claim",
       "status": 200,
-      "elapsedMs": 31.452
+      "elapsedMs": 31.146
     },
     {
       "method": "POST",
       "path": "/api/receiver",
       "status": 429,
-      "elapsedMs": 36.726,
+      "elapsedMs": 22.893,
       "outcome": "receiver-throttled"
     },
     {
       "method": "GET",
       "path": "/api/state",
       "status": 200,
-      "elapsedMs": 21.735
+      "elapsedMs": 16.29
+    },
+    {
+      "method": "POST",
+      "path": "/api/receiver",
+      "status": 429,
+      "elapsedMs": 26.731,
+      "outcome": "receiver-throttled"
     },
     {
       "method": "POST",
       "path": "/api/labs",
       "status": 201,
-      "elapsedMs": 31.317
+      "elapsedMs": 22.03
     },
     {
       "method": "POST",
       "path": "/api/deliveries",
       "status": 201,
-      "elapsedMs": 26.639
+      "elapsedMs": 22.687
     },
     {
       "method": "POST",
       "path": "/api/deliveries",
       "status": 201,
-      "elapsedMs": 24.93
+      "elapsedMs": 25.387
     },
     {
       "method": "POST",
-      "path": "/api/deliveries/b19ad58369f649068f3e2780472047f5/claim",
+      "path": "/api/deliveries/ab3f429d27954287a3814006201f3a2f/claim",
       "status": 200,
-      "elapsedMs": 26.136
+      "elapsedMs": 24.665
     },
     {
       "method": "POST",
-      "path": "/api/deliveries/0ab2379436ee43839bcff5b1ec9bbbd0/claim",
+      "path": "/api/deliveries/184620a98acd447ca7f76e732ca60489/claim",
       "status": 200,
-      "elapsedMs": 25.843
+      "elapsedMs": 23.562
     },
     {
       "method": "POST",
       "path": "/api/receiver",
       "status": 200,
-      "elapsedMs": 26.508,
+      "elapsedMs": 25.375,
       "outcome": "applied"
     },
     {
       "method": "POST",
       "path": "/api/receiver",
       "status": 200,
-      "elapsedMs": 136.162,
+      "elapsedMs": 48.332,
       "outcome": "duplicate-suppressed"
     },
     {
       "method": "GET",
       "path": "/api/state",
       "status": 200,
-      "elapsedMs": 14.862
+      "elapsedMs": 18.247
     },
     {
       "method": "POST",
       "path": "/api/labs",
       "status": 201,
-      "elapsedMs": 21.159
+      "elapsedMs": 34.257
     },
     {
       "method": "POST",
       "path": "/api/deliveries",
       "status": 201,
-      "elapsedMs": 26.245
+      "elapsedMs": 148.251
     },
     {
       "method": "POST",
-      "path": "/api/deliveries/790df9a0c755419ab4b92994510ab8f6/claim",
+      "path": "/api/deliveries/67127c53563a454db4abe62669a92847/claim",
       "status": 200,
-      "elapsedMs": 23.916
+      "elapsedMs": 27.053
     },
     {
       "method": "POST",
-      "path": "/api/deliveries/790df9a0c755419ab4b92994510ab8f6/claim",
+      "path": "/api/deliveries/67127c53563a454db4abe62669a92847/claim",
       "status": 409,
-      "elapsedMs": 37.787
+      "elapsedMs": 43.562
     },
     {
       "method": "POST",
       "path": "/api/clock",
       "status": 200,
-      "elapsedMs": 22.15
+      "elapsedMs": 26.855
     },
     {
       "method": "GET",
       "path": "/api/state",
       "status": 200,
-      "elapsedMs": 16.284
+      "elapsedMs": 19.2
     },
     {
       "method": "POST",
       "path": "/api/clock",
       "status": 200,
-      "elapsedMs": 23.384
+      "elapsedMs": 26.079
     },
     {
       "method": "POST",
-      "path": "/api/deliveries/790df9a0c755419ab4b92994510ab8f6/claim",
+      "path": "/api/deliveries/67127c53563a454db4abe62669a92847/claim",
       "status": 200,
-      "elapsedMs": 26.713
+      "elapsedMs": 27.132
     },
     {
       "method": "POST",
       "path": "/api/receiver",
       "status": 200,
-      "elapsedMs": 26.041,
+      "elapsedMs": 27.021,
       "outcome": "applied"
     },
     {
       "method": "POST",
       "path": "/api/labs",
       "status": 201,
-      "elapsedMs": 26.155
+      "elapsedMs": 26.886
     },
     {
       "method": "POST",
       "path": "/api/labs",
       "status": 201,
-      "elapsedMs": 23.159
+      "elapsedMs": 27.117
     },
     {
       "method": "POST",
       "path": "/api/deliveries",
       "status": 201,
-      "elapsedMs": 23.708
+      "elapsedMs": 27.744
     },
     {
       "method": "POST",
-      "path": "/api/deliveries/61d7ea40e8a04b37937f4a1a2131a2a1/claim",
+      "path": "/api/deliveries/1d9aca7a93fa4ec9829c945ee925c8de/claim",
       "status": 404,
-      "elapsedMs": 18.537
+      "elapsedMs": 18.37
     },
     {
       "method": "GET",
       "path": "/api/state",
       "status": 200,
-      "elapsedMs": 18.489
+      "elapsedMs": 17.819
     },
     {
       "method": "GET",
       "path": "/api/state",
       "status": 401,
-      "elapsedMs": 9.428
+      "elapsedMs": 11.25
     },
     {
       "method": "POST",
       "path": "/api/labs",
       "status": 201,
-      "elapsedMs": 26.947
+      "elapsedMs": 26.677
     },
     {
       "method": "GET",
       "path": "/api/state",
       "status": 403,
-      "elapsedMs": 10.351
+      "elapsedMs": 8.307
     },
     {
       "method": "POST",
       "path": "/api/receiver-mode",
       "status": 400,
-      "elapsedMs": 19.069
+      "elapsedMs": 18.677
     },
     {
       "method": "POST",
       "path": "/api/labs",
       "status": 400,
-      "elapsedMs": 10.011
+      "elapsedMs": 10.179
     },
     {
       "method": "POST",
       "path": "/api/labs",
       "status": 201,
-      "elapsedMs": 27.916
+      "elapsedMs": 26.978
     },
     {
       "method": "POST",
       "path": "/api/deliveries",
       "status": 400,
-      "elapsedMs": 23.204
+      "elapsedMs": 19.385
     },
     {
       "method": "POST",
       "path": "/api/deliveries",
       "status": 415,
-      "elapsedMs": 10.395
+      "elapsedMs": 8.515
     },
     {
       "method": "POST",
       "path": "/api/deliveries",
       "status": 413,
-      "elapsedMs": 9.312
+      "elapsedMs": 9.571
     },
     {
       "method": "POST",
       "path": "/api/deliveries",
       "status": 400,
-      "elapsedMs": 19.444
+      "elapsedMs": 21.755
     },
     {
       "method": "GET",
       "path": "/api/state",
       "status": 200,
-      "elapsedMs": 22.512
+      "elapsedMs": 16.996
     },
     {
       "method": "POST",
       "path": "/api/labs",
       "status": 201,
-      "elapsedMs": 146.627
+      "elapsedMs": 28.007
     },
     {
       "method": "POST",
       "path": "/api/deliveries",
       "status": 201,
-      "elapsedMs": 25.141
+      "elapsedMs": 168.053
     },
     {
       "method": "POST",
-      "path": "/api/deliveries/faa9ef08f3aa4810a9d3720cc16bd831/claim",
+      "path": "/api/deliveries/ee1e4f5e022d4cff93747b310e2339a2/claim",
       "status": 200,
-      "elapsedMs": 24.543
+      "elapsedMs": 32.269
     },
     {
       "method": "POST",
       "path": "/api/receiver",
       "status": 200,
-      "elapsedMs": 24.238,
+      "elapsedMs": 32.879,
       "outcome": "applied"
     },
     {
       "method": "POST",
-      "path": "/api/deliveries/faa9ef08f3aa4810a9d3720cc16bd831/replay",
+      "path": "/api/deliveries/ee1e4f5e022d4cff93747b310e2339a2/replay",
       "status": 409,
-      "elapsedMs": 15.68
+      "elapsedMs": 20.938
     },
     {
       "method": "POST",
-      "path": "/api/deliveries/faa9ef08f3aa4810a9d3720cc16bd831/replay",
+      "path": "/api/deliveries/ee1e4f5e022d4cff93747b310e2339a2/replay",
       "status": 400,
-      "elapsedMs": 17.104
+      "elapsedMs": 22.584
     },
     {
       "method": "POST",
       "path": "/api/labs",
       "status": 201,
-      "elapsedMs": 27.195
+      "elapsedMs": 41.946
     },
     {
       "method": "POST",
       "path": "/api/deliveries",
       "status": 201,
-      "elapsedMs": 30.84
+      "elapsedMs": 31.846
     },
     {
       "method": "POST",
-      "path": "/api/deliveries/4bf035664328429483dcd1829f6f1ce4/claim",
+      "path": "/api/deliveries/ad1862bf5a7840078211400ab4332b72/claim",
       "status": 200,
-      "elapsedMs": 29.929
+      "elapsedMs": 35.786
     },
     {
       "method": "POST",
       "path": "/api/receiver",
       "status": 200,
-      "elapsedMs": 26.788,
+      "elapsedMs": 155.784,
       "outcome": "applied"
     },
     {
       "method": "GET",
       "path": "/api/state",
       "status": 200,
-      "elapsedMs": 17.713
+      "elapsedMs": 18.962
     },
     {
       "method": "POST",
       "path": "/api/labs",
       "status": 201,
-      "elapsedMs": 25.837
+      "elapsedMs": 30.131
     },
     {
       "method": "POST",
       "path": "/api/deliveries",
       "status": 201,
-      "elapsedMs": 21.405
+      "elapsedMs": 27.869
     },
     {
       "method": "POST",
       "path": "/api/deliveries",
       "status": 201,
-      "elapsedMs": 22.133
+      "elapsedMs": 29.34
     },
     {
       "method": "POST",
       "path": "/api/deliveries",
       "status": 201,
-      "elapsedMs": 22.131
+      "elapsedMs": 29.102
     },
     {
       "method": "POST",
       "path": "/api/deliveries",
       "status": 201,
-      "elapsedMs": 20.584
+      "elapsedMs": 29.257
     },
     {
       "method": "POST",
       "path": "/api/deliveries",
       "status": 201,
-      "elapsedMs": 20.303
+      "elapsedMs": 29.361
     },
     {
       "method": "POST",
       "path": "/api/deliveries",
       "status": 201,
-      "elapsedMs": 21.73
+      "elapsedMs": 30.81
     },
     {
       "method": "POST",
       "path": "/api/deliveries",
       "status": 201,
-      "elapsedMs": 21.933
+      "elapsedMs": 27.211
     },
     {
       "method": "POST",
       "path": "/api/deliveries",
       "status": 201,
-      "elapsedMs": 22.304
+      "elapsedMs": 31.55
     },
     {
       "method": "POST",
       "path": "/api/deliveries",
       "status": 201,
-      "elapsedMs": 21.763
+      "elapsedMs": 31.344
     },
     {
       "method": "POST",
       "path": "/api/deliveries",
       "status": 201,
-      "elapsedMs": 26.537
+      "elapsedMs": 30.139
     },
     {
       "method": "POST",
       "path": "/api/deliveries",
       "status": 201,
-      "elapsedMs": 24.365
+      "elapsedMs": 30.254
     },
     {
       "method": "POST",
       "path": "/api/deliveries",
       "status": 201,
-      "elapsedMs": 26.874
+      "elapsedMs": 40.884
     },
     {
       "method": "POST",
       "path": "/api/deliveries",
       "status": 201,
-      "elapsedMs": 22.673
+      "elapsedMs": 30.734
     },
     {
       "method": "POST",
       "path": "/api/deliveries",
       "status": 201,
-      "elapsedMs": 19.558
+      "elapsedMs": 35.981
     },
     {
       "method": "POST",
       "path": "/api/deliveries",
       "status": 201,
-      "elapsedMs": 23.676
+      "elapsedMs": 31.429
     },
     {
       "method": "POST",
       "path": "/api/deliveries",
       "status": 201,
-      "elapsedMs": 21.524
+      "elapsedMs": 36.368
     },
     {
       "method": "POST",
       "path": "/api/deliveries",
       "status": 201,
-      "elapsedMs": 21.984
+      "elapsedMs": 38.679
     },
     {
       "method": "POST",
       "path": "/api/deliveries",
       "status": 201,
-      "elapsedMs": 24.311
+      "elapsedMs": 31.733
     },
     {
       "method": "POST",
       "path": "/api/deliveries",
       "status": 201,
-      "elapsedMs": 130.523
+      "elapsedMs": 93.448
     },
     {
       "method": "POST",
       "path": "/api/deliveries",
       "status": 201,
-      "elapsedMs": 24.066
+      "elapsedMs": 22.793
     },
     {
       "method": "POST",
       "path": "/api/deliveries",
       "status": 201,
-      "elapsedMs": 25.12
+      "elapsedMs": 26.76
     },
     {
       "method": "POST",
       "path": "/api/deliveries",
       "status": 201,
-      "elapsedMs": 22.169
+      "elapsedMs": 22.861
     },
     {
       "method": "POST",
       "path": "/api/deliveries",
       "status": 201,
-      "elapsedMs": 23.839
+      "elapsedMs": 27.408
     },
     {
       "method": "POST",
       "path": "/api/deliveries",
       "status": 201,
-      "elapsedMs": 23.082
+      "elapsedMs": 24.564
     },
     {
       "method": "POST",
       "path": "/api/deliveries",
       "status": 429,
-      "elapsedMs": 15.126
+      "elapsedMs": 17.031
     },
     {
       "method": "GET",
       "path": "/api/state",
       "status": 200,
-      "elapsedMs": 17.178
+      "elapsedMs": 15.82
     },
     {
       "method": "POST",
       "path": "/api/labs",
       "status": 201,
-      "elapsedMs": 24.891
+      "elapsedMs": 26.432
     },
     {
       "method": "POST",
       "path": "/api/deliveries",
       "status": 201,
-      "elapsedMs": 77.414
+      "elapsedMs": 24.362
     },
     {
       "method": "DELETE",
       "path": "/api/lab",
       "status": 200,
-      "elapsedMs": 24.349
+      "elapsedMs": 24.653
     },
     {
       "method": "GET",
       "path": "/api/state",
       "status": 401,
-      "elapsedMs": 154.966
+      "elapsedMs": 16.088
     },
     {
       "method": "DELETE",
       "path": "/api/lab",
       "status": 200,
-      "elapsedMs": 160.366
+      "elapsedMs": 23.338
     },
     {
       "method": "DELETE",
       "path": "/api/lab",
       "status": 200,
-      "elapsedMs": 32.7
+      "elapsedMs": 23.776
     },
     {
       "method": "DELETE",
       "path": "/api/lab",
       "status": 200,
-      "elapsedMs": 21.68
+      "elapsedMs": 24.37
     },
     {
       "method": "DELETE",
       "path": "/api/lab",
       "status": 200,
-      "elapsedMs": 20.695
+      "elapsedMs": 27.147
     },
     {
       "method": "DELETE",
       "path": "/api/lab",
       "status": 200,
-      "elapsedMs": 22.21
+      "elapsedMs": 28.142
     },
     {
       "method": "DELETE",
       "path": "/api/lab",
       "status": 200,
-      "elapsedMs": 21.997
+      "elapsedMs": 145.804
     },
     {
       "method": "DELETE",
       "path": "/api/lab",
       "status": 200,
-      "elapsedMs": 22.795
+      "elapsedMs": 26.561
     },
     {
       "method": "DELETE",
       "path": "/api/lab",
       "status": 200,
-      "elapsedMs": 22.41
+      "elapsedMs": 27.153
     },
     {
       "method": "DELETE",
       "path": "/api/lab",
       "status": 200,
-      "elapsedMs": 23.265
+      "elapsedMs": 27.726
     },
     {
       "method": "DELETE",
       "path": "/api/lab",
       "status": 200,
-      "elapsedMs": 28.592
+      "elapsedMs": 29.747
     },
     {
       "method": "DELETE",
       "path": "/api/lab",
       "status": 200,
-      "elapsedMs": 20.11
+      "elapsedMs": 33.72
     },
     {
       "method": "DELETE",
       "path": "/api/lab",
       "status": 200,
-      "elapsedMs": 21.864
+      "elapsedMs": 57.678
     },
     {
       "method": "DELETE",
       "path": "/api/lab",
       "status": 200,
-      "elapsedMs": 22.153
+      "elapsedMs": 31.014
     },
     {
       "method": "DELETE",
       "path": "/api/lab",
       "status": 200,
-      "elapsedMs": 26.136
+      "elapsedMs": 34.376
     },
     {
       "method": "DELETE",
       "path": "/api/lab",
       "status": 200,
-      "elapsedMs": 24.231
+      "elapsedMs": 33.81
     },
     {
       "method": "DELETE",
       "path": "/api/lab",
       "status": 200,
-      "elapsedMs": 26.075
+      "elapsedMs": 33.459
     },
     {
       "method": "DELETE",
       "path": "/api/lab",
       "status": 200,
-      "elapsedMs": 26.656
+      "elapsedMs": 35.57
     },
     {
       "method": "DELETE",
       "path": "/api/lab",
       "status": 200,
-      "elapsedMs": 25.213
+      "elapsedMs": 97.124
     },
     {
       "method": "DELETE",
       "path": "/api/lab",
       "status": 200,
-      "elapsedMs": 20.906
+      "elapsedMs": 26.743
     },
     {
       "method": "DELETE",
       "path": "/api/lab",
       "status": 200,
-      "elapsedMs": 21.091
+      "elapsedMs": 27.702
     },
     {
       "method": "DELETE",
       "path": "/api/lab",
       "status": 200,
-      "elapsedMs": 22.956
+      "elapsedMs": 26.911
     },
     {
       "method": "DELETE",
       "path": "/api/lab",
       "status": 200,
-      "elapsedMs": 23.544
+      "elapsedMs": 26.724
     },
     {
       "method": "DELETE",
       "path": "/api/lab",
       "status": 200,
-      "elapsedMs": 26.276
+      "elapsedMs": 27.309
     },
     {
       "method": "DELETE",
       "path": "/api/lab",
       "status": 200,
-      "elapsedMs": 25.732
+      "elapsedMs": 28.628
     },
     {
       "method": "DELETE",
       "path": "/api/lab",
       "status": 401,
-      "elapsedMs": 16.645
+      "elapsedMs": 18.895
     }
   ],
   "backend": "Cloudflare Worker + D1",
   "summary": {
     "passed": 25,
     "total": 25,
-    "httpRequests": 215,
-    "httpP50Ms": 23.082,
-    "httpP95Ms": 130.523
+    "httpRequests": 216,
+    "httpP50Ms": 25.688,
+    "httpP95Ms": 97.124
   }
 }

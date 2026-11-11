@@ -1,7 +1,7 @@
 {
   "runtime": "worker",
   "passed": true,
-  "checkedAt": "2026-11-11T13:05:15.444Z",
+  "checkedAt": "2026-11-11T13:27:00.003Z",
   "checks": [
     "order and completed delivery survive process restart",
     "idempotency receipt returns identical response after restart",

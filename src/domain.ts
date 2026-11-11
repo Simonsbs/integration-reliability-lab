@@ -125,7 +125,8 @@ export async function receive(state: LabState, headers: Headers, raw: string): P
   const job = findJob(state, headers.get("X-Lab-Delivery") ?? "");
   const attemptId = headers.get("X-Lab-Attempt") ?? "";
   const prior = job.attempts.find((attempt) => attempt.id === attemptId);
-  if (prior) return { status: prior.httpStatus, body: prior.responseBody, headers: { "X-Lab-Outcome": prior.outcome, "X-Correlation-Id": job.correlationId } };
+  if (prior) return { status: prior.httpStatus, body: prior.responseBody, headers: { "X-Lab-Outcome": prior.outcome, "X-Correlation-Id": job.correlationId,
+    ...(prior.outcome === "receiver-throttled" ? { "Retry-After": "8" } : {}) } };
   if (!job.lease || job.lease.id !== attemptId) throw new LabError(409, "invalid-lease", "Reserve this delivery before sending it.");
   const fail = (status: number, code: string, message: string, retryAfter = 0) => record(state, job, attemptId, status, code, { error: { code, message } }, false, false, retryAfter);
   if (job.lease.expiresAt <= state.clock) return fail(408, "sender-timeout", "The virtual attempt lease expired.");
