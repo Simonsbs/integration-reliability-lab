@@ -31,7 +31,13 @@ export async function connect(): Promise<Snapshot> {
   const data = await request<{ token: string; lab: Snapshot }>("/api/labs", {}); keep(data.token); return data.lab;
 }
 export const reload = () => request<Snapshot>("/api/state");
-export async function reset(): Promise<Snapshot> { if (token) await request("/api/lab", undefined, "DELETE"); keep(""); return connect(); }
+export async function reset(): Promise<Snapshot> {
+  if (token) {
+    const response = await fetch("/api/lab", { method: "DELETE", headers: { Authorization: `Bearer ${token}` }, signal: AbortSignal.timeout(15000) });
+    if (!response.ok && ![401, 410].includes(response.status)) throw new Error("The sandbox could not be reset. Try again when the connection recovers.");
+  }
+  keep(""); return connect();
+}
 export const createDelivery = (payload: Payload, fault: Fault) => request<{ deliveryId: string }>("/api/deliveries", { payload, fault });
 export async function deliver(deliveryId: string) {
   const envelope = await request<{ rawBody: string; headers: Record<string, string> }>(`/api/deliveries/${deliveryId}/claim`, {});
