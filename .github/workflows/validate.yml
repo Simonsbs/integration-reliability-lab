@@ -1,0 +1,36 @@
+name: Validate both APIs
+on:
+  push:
+  pull_request:
+permissions:
+  contents: read
+jobs:
+  validate:
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, windows-latest]
+    runs-on: ${{ matrix.os }}
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v7.0.1
+      - uses: actions/setup-node@v7.1.0
+        with:
+          node-version: '24'
+          cache: npm
+      - uses: actions/setup-dotnet@v6.1.0
+        with:
+          dotnet-version: '10.0.x'
+      - run: npm ci
+      - run: npm run check
+      - run: npm test
+      - run: npm run build
+      - run: npm audit --audit-level=moderate
+      - run: dotnet list server/IntegrationLab.Api package --vulnerable --include-transitive
+      - run: npm run verify
+      - uses: actions/upload-artifact@v7.0.2
+        if: always()
+        with:
+          name: validation-${{ matrix.os }}
+          path: artifacts/validation/
+          if-no-files-found: warn

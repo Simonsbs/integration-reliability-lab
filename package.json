@@ -1,0 +1,44 @@
+{
+  "name": "integration-reliability-lab",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=22.18.0"
+  },
+  "scripts": {
+    "prepare": "node scripts/prepare.mjs",
+    "dev": "vite --host 127.0.0.1",
+    "dev:api": "dotnet run --project server/IntegrationLab.Api --urls http://127.0.0.1:8788",
+    "dev:edge": "wrangler dev --ip 127.0.0.1 --port 8789 --inspector-port 0",
+    "build": "node scripts/build.mjs",
+    "check": "tsc --noEmit && dotnet build server/IntegrationLab.Api -c Release --nologo",
+    "test": "node --experimental-strip-types --test tests/*.test.mjs",
+    "test:api": "node scripts/acceptance.mjs",
+    "verify": "node scripts/verify.mjs",
+    "db:generate": "drizzle-kit generate",
+    "db:local": "wrangler d1 execute DB --local --file drizzle/0000_initial.sql",
+    "types:worker": "wrangler types --env-interface Env"
+  },
+  "dependencies": {
+    "@fontsource-variable/dm-sans": "5.3.0",
+    "@fontsource-variable/manrope": "5.3.0",
+    "drizzle-orm": "0.45.2",
+    "lucide-react": "1.72.0",
+    "react": "19.3.1",
+    "react-dom": "19.3.1"
+  },
+  "overrides": { "@esbuild-kit/core-utils": { "esbuild": "0.25.12" } },
+  "devDependencies": {
+    "@cloudflare/workers-types": "5.20261110.1",
+    "@types/node": "24.0.0",
+    "@types/react": "19.0.0",
+    "@types/react-dom": "19.0.0",
+    "@vitejs/plugin-react": "6.3.0",
+    "drizzle-kit": "0.31.11",
+    "esbuild": "0.28.2",
+    "typescript": "7.0.2",
+    "vite": "8.3.8",
+    "wrangler": "4.160.0"
+  }
+}

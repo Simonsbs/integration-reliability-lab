@@ -1,0 +1,17 @@
+node_modules/
+dist/
+.wrangler/
+.env*
+.dev.vars*
+.sites-runtime/
+.runtime/
+**/bin/
+**/obj/
+**/wwwroot/
+*.db
+*.db-shm
+*.db-wal
+*.log
+*.tar.gz
+worker/assets.generated.ts
+artifacts/
