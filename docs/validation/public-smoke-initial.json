@@ -1,0 +1,33 @@
+{
+  "url": "https://integration.bestdev.co.il",
+  "checkedAt": "2026-11-11T13:14:38.903Z",
+  "checks": [
+    {
+      "name": "HTTPS opens the standalone application without sign-in",
+      "passed": true
+    },
+    {
+      "name": "security headers constrain scripts, connections and framing",
+      "passed": false,
+      "error": "The \"string\" argument must be of type string. Received type object (null)"
+    },
+    {
+      "name": "hashed application assets load with immutable caching",
+      "passed": false,
+      "error": "The input did not match the regular expression /immutable/. Input:\n\n'public, max-age=0, must-revalidate'\n"
+    },
+    {
+      "name": "build notes, API contract and validation are available",
+      "passed": true
+    },
+    {
+      "name": "unknown assets are 404 and static POST is 405",
+      "passed": true
+    },
+    {
+      "name": "API reports Worker with no-store and rejects a foreign origin",
+      "passed": true
+    }
+  ],
+  "passed": false
+}
