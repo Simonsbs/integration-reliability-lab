@@ -1,0 +1,286 @@
+{
+  "conclusion": "success",
+  "headSha": "fb897e42741d67bea8a2d8fe685fde11aac6d5e1",
+  "jobs": [
+    {
+      "completedAt": "2026-11-11T13:28:54Z",
+      "conclusion": "success",
+      "databaseId": 130552199796,
+      "name": "validate (ubuntu-latest)",
+      "startedAt": "2026-11-11T13:28:09Z",
+      "status": "completed",
+      "steps": [
+        {
+          "completedAt": "2026-11-11T13:28:12Z",
+          "conclusion": "success",
+          "name": "Set up job",
+          "number": 1,
+          "startedAt": "2026-11-11T13:28:10Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-11-11T13:28:13Z",
+          "conclusion": "success",
+          "name": "Run actions/checkout@v7.0.1",
+          "number": 2,
+          "startedAt": "2026-11-11T13:28:12Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-11-11T13:28:16Z",
+          "conclusion": "success",
+          "name": "Run actions/setup-node@v7.1.0",
+          "number": 3,
+          "startedAt": "2026-11-11T13:28:13Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-11-11T13:28:25Z",
+          "conclusion": "success",
+          "name": "Run actions/setup-dotnet@v6.1.0",
+          "number": 4,
+          "startedAt": "2026-11-11T13:28:16Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-11-11T13:28:30Z",
+          "conclusion": "success",
+          "name": "Run npm ci",
+          "number": 5,
+          "startedAt": "2026-11-11T13:28:25Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-11-11T13:28:36Z",
+          "conclusion": "success",
+          "name": "Run npm run check",
+          "number": 6,
+          "startedAt": "2026-11-11T13:28:30Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-11-11T13:28:37Z",
+          "conclusion": "success",
+          "name": "Run npm test",
+          "number": 7,
+          "startedAt": "2026-11-11T13:28:36Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-11-11T13:28:38Z",
+          "conclusion": "success",
+          "name": "Run npm run build",
+          "number": 8,
+          "startedAt": "2026-11-11T13:28:37Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-11-11T13:28:38Z",
+          "conclusion": "success",
+          "name": "Run npm audit --audit-level=moderate",
+          "number": 9,
+          "startedAt": "2026-11-11T13:28:38Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-11-11T13:28:40Z",
+          "conclusion": "success",
+          "name": "Run dotnet list server/IntegrationLab.Api package --vulnerable --include-transitive",
+          "number": 10,
+          "startedAt": "2026-11-11T13:28:38Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-11-11T13:28:50Z",
+          "conclusion": "success",
+          "name": "Run npm run verify",
+          "number": 11,
+          "startedAt": "2026-11-11T13:28:40Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-11-11T13:28:51Z",
+          "conclusion": "success",
+          "name": "Run actions/upload-artifact@v7.0.2",
+          "number": 12,
+          "startedAt": "2026-11-11T13:28:50Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-11-11T13:28:51Z",
+          "conclusion": "success",
+          "name": "Post Run actions/setup-dotnet@v6.1.0",
+          "number": 22,
+          "startedAt": "2026-11-11T13:28:51Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-11-11T13:28:52Z",
+          "conclusion": "success",
+          "name": "Post Run actions/setup-node@v7.1.0",
+          "number": 23,
+          "startedAt": "2026-11-11T13:28:51Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-11-11T13:28:52Z",
+          "conclusion": "success",
+          "name": "Post Run actions/checkout@v7.0.1",
+          "number": 24,
+          "startedAt": "2026-11-11T13:28:52Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-11-11T13:28:52Z",
+          "conclusion": "success",
+          "name": "Complete job",
+          "number": 25,
+          "startedAt": "2026-11-11T13:28:52Z",
+          "status": "completed"
+        }
+      ],
+      "url": "https://github.com/Simonsbs/integration-reliability-lab/actions/runs/43029384381/job/130552199796"
+    },
+    {
+      "completedAt": "2026-11-11T13:29:42Z",
+      "conclusion": "success",
+      "databaseId": 130552200081,
+      "name": "validate (windows-latest)",
+      "startedAt": "2026-11-11T13:28:10Z",
+      "status": "completed",
+      "steps": [
+        {
+          "completedAt": "2026-11-11T13:28:12Z",
+          "conclusion": "success",
+          "name": "Set up job",
+          "number": 1,
+          "startedAt": "2026-11-11T13:28:11Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-11-11T13:28:19Z",
+          "conclusion": "success",
+          "name": "Run actions/checkout@v7.0.1",
+          "number": 2,
+          "startedAt": "2026-11-11T13:28:12Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-11-11T13:28:29Z",
+          "conclusion": "success",
+          "name": "Run actions/setup-node@v7.1.0",
+          "number": 3,
+          "startedAt": "2026-11-11T13:28:19Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-11-11T13:28:57Z",
+          "conclusion": "success",
+          "name": "Run actions/setup-dotnet@v6.1.0",
+          "number": 4,
+          "startedAt": "2026-11-11T13:28:29Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-11-11T13:29:09Z",
+          "conclusion": "success",
+          "name": "Run npm ci",
+          "number": 5,
+          "startedAt": "2026-11-11T13:28:57Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-11-11T13:29:20Z",
+          "conclusion": "success",
+          "name": "Run npm run check",
+          "number": 6,
+          "startedAt": "2026-11-11T13:29:09Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-11-11T13:29:20Z",
+          "conclusion": "success",
+          "name": "Run npm test",
+          "number": 7,
+          "startedAt": "2026-11-11T13:29:20Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-11-11T13:29:22Z",
+          "conclusion": "success",
+          "name": "Run npm run build",
+          "number": 8,
+          "startedAt": "2026-11-11T13:29:20Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-11-11T13:29:23Z",
+          "conclusion": "success",
+          "name": "Run npm audit --audit-level=moderate",
+          "number": 9,
+          "startedAt": "2026-11-11T13:29:22Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-11-11T13:29:25Z",
+          "conclusion": "success",
+          "name": "Run dotnet list server/IntegrationLab.Api package --vulnerable --include-transitive",
+          "number": 10,
+          "startedAt": "2026-11-11T13:29:23Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-11-11T13:29:36Z",
+          "conclusion": "success",
+          "name": "Run npm run verify",
+          "number": 11,
+          "startedAt": "2026-11-11T13:29:25Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-11-11T13:29:37Z",
+          "conclusion": "success",
+          "name": "Run actions/upload-artifact@v7.0.2",
+          "number": 12,
+          "startedAt": "2026-11-11T13:29:36Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-11-11T13:29:38Z",
+          "conclusion": "success",
+          "name": "Post Run actions/setup-dotnet@v6.1.0",
+          "number": 22,
+          "startedAt": "2026-11-11T13:29:37Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-11-11T13:29:38Z",
+          "conclusion": "success",
+          "name": "Post Run actions/setup-node@v7.1.0",
+          "number": 23,
+          "startedAt": "2026-11-11T13:29:38Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-11-11T13:29:40Z",
+          "conclusion": "success",
+          "name": "Post Run actions/checkout@v7.0.1",
+          "number": 24,
+          "startedAt": "2026-11-11T13:29:38Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-11-11T13:29:40Z",
+          "conclusion": "success",
+          "name": "Complete job",
+          "number": 25,
+          "startedAt": "2026-11-11T13:29:40Z",
+          "status": "completed"
+        }
+      ],
+      "url": "https://github.com/Simonsbs/integration-reliability-lab/actions/runs/43029384381/job/130552200081"
+    }
+  ],
+  "status": "completed",
+  "url": "https://github.com/Simonsbs/integration-reliability-lab/actions/runs/43029384381"
+}

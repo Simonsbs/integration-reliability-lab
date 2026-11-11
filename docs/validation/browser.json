@@ -1,0 +1,26 @@
+{
+  "reviewer": "coding agent using the browser UI",
+  "url": "https://integration.bestdev.co.il/",
+  "reviewedImplementation": "fb897e42741d67bea8a2d8fe685fde11aac6d5e1",
+  "frontendAsset": "/assets/index-XAOMMbQF.js",
+  "viewports": [{"width":1280,"height":720},{"width":390,"height":844}],
+  "checks": [
+    "Public app opens and creates an isolated sandbox without sign-in",
+    "Outage performs four failed HTTP attempts and reaches dead letters",
+    "Outage scenario also completes when another job has an earlier pending retry",
+    "Healthy receiver and controlled replay retain four failures and add a successful fifth attempt",
+    "Queued duplicate returns cached success while order effects remain unchanged",
+    "Simulated response loss commits an order once and retry suppresses its duplicate",
+    "Refresh retains three deliveries, two order effects and two duplicate suppressions in the reviewed session",
+    "Audit view shows correlated server transitions and preserved failed attempts",
+    "Evidence download contains three deliveries and eight attempts, with no capability or signing key",
+    "Reset dialog initially focuses Keep this sandbox; Escape preserves the state; confirmed reset opens an empty sandbox",
+    "Architecture view explains actual runtime, virtual clock and synthetic fault boundaries",
+    "Mobile signature rejection leaves no effect; repair and replay then apply one effect",
+    "Mobile filters show dead-letter and delivered records correctly",
+    "Mobile document stays within the viewport and the audit table scrolls inside its own region",
+    "Final UI honours the eight-second throttle deadline and enables a due retry with accurate guidance"
+  ],
+  "passed": true,
+  "scope": "Agent-observed basic operation and responsive layout checks. This is not a human usability study or a complete accessibility audit. Screenshots and the downloaded synthetic snapshot accompany the report."
+}

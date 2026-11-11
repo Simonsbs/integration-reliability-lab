@@ -1,0 +1,111 @@
+{
+  "release": "Version 1",
+  "status": "validated for the documented demonstration scope",
+  "generatedAt": "2026-11-11T13:32:04.426Z",
+  "publicUrl": "https://integration.bestdev.co.il/",
+  "repository": "https://github.com/Simonsbs/integration-reliability-lab",
+  "implementationCommit": "fb897e42741d67bea8a2d8fe685fde11aac6d5e1",
+  "testedSiteVersion": 3,
+  "testedDeployment": "appgdep_6af46d9a1c788191956c644ec9334ac6",
+  "unitChecks": {
+    "passed": 14,
+    "total": 14,
+    "evidence": "https://github.com/Simonsbs/integration-reliability-lab/actions/runs/43029384381"
+  },
+  "api": {
+    "aspnet-local": {
+      "passed": 25,
+      "total": 25,
+      "httpRequests": 216,
+      "httpP50Ms": 6.663,
+      "httpP95Ms": 13.461,
+      "checkedAt": "2026-11-11T13:26:45.008Z",
+      "backend": "ASP.NET Core + SQLite",
+      "baseUrl": "http://127.0.0.1:63607"
+    },
+    "worker-local": {
+      "passed": 25,
+      "total": 25,
+      "httpRequests": 216,
+      "httpP50Ms": 25.688,
+      "httpP95Ms": 97.124,
+      "checkedAt": "2026-11-11T13:26:57.080Z",
+      "backend": "Cloudflare Worker + D1",
+      "baseUrl": "http://127.0.0.1:63618"
+    },
+    "public-release": {
+      "passed": 25,
+      "total": 25,
+      "httpRequests": 216,
+      "httpP50Ms": 189.189,
+      "httpP95Ms": 222.699,
+      "checkedAt": "2026-11-11T13:29:57.159Z",
+      "backend": "Cloudflare Worker + D1",
+      "baseUrl": "https://integration.bestdev.co.il"
+    }
+  },
+  "persistence": {
+    "processRestart": [
+      "ASP.NET Core + SQLite",
+      "Worker + D1"
+    ],
+    "realCapabilityExpiry": [
+      "ASP.NET Core + SQLite",
+      "Worker + D1"
+    ],
+    "publicRedeployment": "Site version 1 to version 2, one order effect and identical duplicate receipt retained"
+  },
+  "publicSmoke": {
+    "passed": 6,
+    "total": 6
+  },
+  "browser": {
+    "passed": true,
+    "evidence": "browser.json",
+    "export": "browser-session.json"
+  },
+  "screenshots": {
+    "desktop": {
+      "path": "screenshots/desktop.png",
+      "width": 65536,
+      "height": 4292542531,
+      "sha256": "4495e7bbe079987425c8058287057d9ca8ac65f3547512be71ecedc937b891a5"
+    },
+    "mobile": {
+      "path": "screenshots/mobile.png",
+      "width": 65536,
+      "height": 4292542531,
+      "sha256": "8ae3015ff3312f184d05f0714d22fdf438df660a71f56af19e3e18f120a5957c"
+    }
+  },
+  "ci": {
+    "url": "https://github.com/Simonsbs/integration-reliability-lab/actions/runs/43029384381",
+    "headSha": "fb897e42741d67bea8a2d8fe685fde11aac6d5e1",
+    "jobs": [
+      {
+        "name": "validate (ubuntu-latest)",
+        "conclusion": "success",
+        "url": "https://github.com/Simonsbs/integration-reliability-lab/actions/runs/43029384381/job/130552199796"
+      },
+      {
+        "name": "validate (windows-latest)",
+        "conclusion": "success",
+        "url": "https://github.com/Simonsbs/integration-reliability-lab/actions/runs/43029384381/job/130552200081"
+      }
+    ]
+  },
+  "sourceHashes": {
+    "src/domain.ts": "3411b23203d6b3e5a75229a78caaa3c003505e744db30d43adcefb08d77c9639",
+    "worker/api.ts": "b773007e509fabc388f0a611be862b4569044c6cd7c5584eb9f39360527141f0",
+    "worker/repository.ts": "f7eed766960d7f26acbda171bfae7e3760069927bf0eaa83db5bec847330a3a7",
+    "server/IntegrationLab.Api/Domain.cs": "6cb9fac8776a1274b78a40db9a01464cc434bd158c1ca80a650078f829a4f87b",
+    "server/IntegrationLab.Api/Program.cs": "fc2a7e19f8b416014e84d3948796c5c8e3d0e486d0df02006a5adf994caf2c9f",
+    "server/IntegrationLab.Api/Repository.cs": "d253d7b23e084cbcaa29b0a0cb1f583ee5b170004f54c4ded1d9e7dc0a96ac63",
+    "src/App.tsx": "1307e6cef4712032c99e5fb6576e612fd5487d4a6ab815d2fcc14ba1a39889f3",
+    "src/client.ts": "24812b4b995d1d86c91a4a8fa9b4a03475950807610981935fa487965cb0e43a",
+    "worker/index.ts": "9001036fcb6a65b64dc70d8153c878409a15bb886ac2e7ff1d0a878d82db9964",
+    "scripts/build.mjs": "73f8acbf88df3c852e16702f4d981a77641b3d79c9842aab98750c85e12d401d",
+    "vite.config.ts": "3fd2d7ffc2f57726c1696f9751e982197084f27672ba3219cbe804a13df3e9c3"
+  },
+  "limits": "Synthetic bounded sessions; explicit virtual retry clock; browser sender; public Worker with D1 and separately runnable ASP.NET Core API. No production availability, throughput or distributed exactly-once claim."
+}

@@ -17,9 +17,9 @@ Committed measured reports live in [docs/validation](https://github.com/Simonsbs
 | Check | Recorded result |
 | --- | --- |
 | Unit and client error recovery | 14/14 passed |
-| ASP.NET Core + SQLite HTTP contract | 25/25 passed, 215 requests |
-| Worker + local D1 HTTP contract | 25/25 passed, 215 requests |
-| Public custom-domain HTTP contract | 25/25 passed, 215 requests |
+| ASP.NET Core + SQLite HTTP contract | 25/25 passed, 216 requests |
+| Worker + local D1 HTTP contract | 25/25 passed, 216 requests |
+| Public custom-domain HTTP contract | 25/25 passed, 216 requests |
 | Real expired capability | HTTP 410 from both actual local runtimes |
 | Actual process restart | Orders, delivery status and exact duplicate receipts persisted in both runtimes |
 | Public deployment change | D1 order and receipt persisted from Site version 1 to version 2 |
@@ -28,7 +28,7 @@ Committed measured reports live in [docs/validation](https://github.com/Simonsbs
 | Browser operations | Outage, recovery, lost-response deduplication, refresh, audit, evidence export and reset checked |
 | Mobile browser | 390 × 844 viewport; signature rejection, repaired replay, filters and contained audit scrolling checked |
 
-Machine-readable results are in `docs/validation/release.json`, the individual JSON reports and the linked CI logs. Browser evidence is agent-observed; screenshots accompany it. The public run recorded median HTTP response time of 198.809 ms and p95 233.404 ms on this client. These figures include different API operations and test cleanup, and describe this run only.
+Machine-readable results are in `docs/validation/release.json`, the individual JSON reports and the linked CI logs. Browser evidence is agent-observed; screenshots accompany it. The public run recorded median HTTP response time of 189.189 ms and p95 222.699 ms on this client. These figures include different API operations and test cleanup, and describe this run only. The final throttle case also checks that a repeated attempt retains its original Retry-After header.
 
 The initial public smoke check found that the hosting layer served separately packaged static files before the Worker, bypassing its headers. The build now embeds all assets and packages only the Worker. A build-time artifact check prevents that layout regression. The first retry after deployment still saw the previous cached static responses while the host propagated the change; the subsequent bare-URL check passed all six checks. Both earlier smoke reports are retained, rather than replaced with passing results.
 
