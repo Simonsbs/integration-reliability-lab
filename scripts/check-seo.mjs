@@ -1,0 +1,14 @@
+import assert from "node:assert/strict";
+import { readFile } from "node:fs/promises";
+const directory = ".runtime/site-client";
+const origin = "https://integration.bestdev.co.il/";
+const html = await readFile(directory + "/index.html", "utf8");
+assert.ok(html.includes('rel="canonical" href="' + origin + '"'));
+assert.ok(html.includes('aria-label="Project overview"'));
+assert.ok(html.includes('type="application/ld+json"'));
+assert.ok(!html.includes('content="noindex'));
+assert.match(await readFile(directory + "/robots.txt", "utf8"), /Sitemap:/);
+assert.ok((await readFile(directory + "/sitemap.xml", "utf8")).includes("<loc>" + origin + "</loc>"));
+const assets = await readFile("worker/assets.generated.ts", "utf8");
+assert.ok(assets.includes('"/robots.txt"') && assets.includes('"/sitemap.xml"'), "Crawl files must be embedded in the deployed Worker");
+console.log("PASS: public overview, canonical metadata, sitemap and robots are present in the deployment.");

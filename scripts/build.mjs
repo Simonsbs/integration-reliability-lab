@@ -17,7 +17,7 @@ await mkdir(resolve(client, "validation"), { recursive: true });
 for (const file of await readdir("docs/validation")) {
   if (file.endsWith(".json")) await copyFile(resolve("docs/validation", file), resolve(client, "validation", file));
 }
-const types = { ".html": "text/html; charset=utf-8", ".js": "text/javascript; charset=utf-8", ".css": "text/css; charset=utf-8", ".svg": "image/svg+xml", ".woff2": "font/woff2", ".md": "text/markdown; charset=utf-8", ".json": "application/json; charset=utf-8" };
+const types = { ".txt": "text/plain; charset=utf-8", ".xml": "application/xml; charset=utf-8", ".html": "text/html; charset=utf-8", ".js": "text/javascript; charset=utf-8", ".css": "text/css; charset=utf-8", ".svg": "image/svg+xml", ".woff2": "font/woff2", ".md": "text/markdown; charset=utf-8", ".json": "application/json; charset=utf-8" };
 const assets = {};
 async function collect(directory) {
   for (const entry of await readdir(directory, { withFileTypes: true })) {
@@ -34,3 +34,5 @@ await mkdir("dist/.openai", { recursive: true });
 await copyFile(".openai/hosting.json", "dist/.openai/hosting.json");
 console.log(`Built ${Object.keys(assets).length} embedded assets and the D1-backed Worker in ${relative(root, resolve("dist"))}.`);
 await import("./validate-artifact.mjs");
+
+await import("./check-seo.mjs");
